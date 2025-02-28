@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-gruv-light-bg: #fbf1c7;
+    --color-gruv-light-bg1: #ebdbb2;
+    --color-gruv-light-bg4: #a89984;
+    --color-gruv-light-fg: #3c3836;
+    --color-gruv-light-green: #79740e;
+    
+    --color-gruv-dark-bg: #282828;
+    --color-gruv-dark-bg1: #3c3836;
+    --color-gruv-dark-bg4: #7c6f64;
+    --color-gruv-dark-fg: #ebdbb2;
+    --color-gruv-dark-green: #b8bb26;
+}

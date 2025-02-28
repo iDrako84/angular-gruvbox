@@ -1,0 +1,31 @@
+<ul>
+  <li class="p-1 flex" [ngClass]="classStatusNavs()">
+    <button type="button" class="flex p-2 bg-gruv-light-green dark:bg-gruv-dark-green text-gray-200 dark:text-gruv-dark-fg rounded cursor-pointer" (click)="onToggleMenu()">
+      <span class="material-icons-outlined">menu</span>
+    </button>
+  </li>
+  <li class="p-1 flex justify-center">
+    <a href="#" class="flex items-center bg-gruv-light-green dark:bg-gruv-dark-green text-gray-200 dark:text-gruv-dark-fg rounded p-2" [ngClass]="classPath()">
+      <span class="material-icons-outlined">home</span>
+      @if (isOpen()) {
+        <span class="ml-2">Home</span>
+      }
+    </a>
+  </li>
+  <li class="p-1 flex justify-center">
+    <a href="#" class="flex items-center bg-gruv-light-green dark:bg-gruv-dark-green text-gray-200 dark:text-gruv-dark-fg rounded p-2" [ngClass]="classPath()">
+      <span class="material-icons-outlined">table_view</span>
+      @if (isOpen()) {
+        <span class="ml-2">Table Users</span>
+      }
+    </a>
+  </li>
+  <li class="p-1 flex justify-center">
+    <a href="#" class="flex items-center bg-gruv-light-green dark:bg-gruv-dark-green text-gray-200 dark:text-gruv-dark-fg rounded p-2" [ngClass]="classPath()">
+      <span class="material-icons-outlined">person</span>
+      @if (isOpen()) {
+        <span class="ml-2">Insert User</span>
+      }
+    </a>
+  </li>
+</ul>
