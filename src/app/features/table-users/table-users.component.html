@@ -1,1 +1,41 @@
-<p>table-users works!</p>
+
+
+<div class="relative overflow-x-auto">
+    <table class="w-full text-sm text-left rtl:text-right">
+        <thead class="text-xs uppercase bg-gruv-light-bg1 dark:bg-gruv-dark-bg1">
+            <tr>
+                @for (column of columns(); track column) {
+                    <th scope="col" class="px-6 py-3 last:text-right">
+                        {{ column }}
+                    </th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @for (user of users(); track $index) {
+                <tr class="bg-white not-last:border-b dark:bg-gruv-dark-bg4 not-last:dark:border-gruv-dark-bg1 not-last:border-gruv-light-bg4">
+                    <td class="px-6 py-4">
+                        {{ user.firstName }} {{ user.lastName }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ user.age }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ user.role | role }}
+                    </td>
+                    <td class="px-6 py-4 flex justify-end">
+                        <button type="button" gruv-button color="danger" (click)="onRemoveUser($index)">
+                            <span class="material-icons-outlined">delete</span>
+                        </button>
+                    </td>
+                </tr>
+            } @empty {
+                <tr class="bg-white not-last:border-b dark:bg-gruv-dark-bg4 not-last:dark:border-gruv-dark-bg1 not-last:border-gruv-light-bg4">
+                    <td [attr.colspan]="columns().length" class="px-6 py-4">
+                        No Users
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -25,4 +25,12 @@ export class ThemeService {
       this.renderer[isDark ? 'addClass' : 'removeClass'](this.document.documentElement, 'dark');
     }, { injector: this.injector });
   }
+
+  public getIsDark(): WritableSignal<boolean> {
+    return this.isDark;
+  }
+
+  public toggleIsDark(): void {
+    this.isDark.update(v => !v);
+  }
 }

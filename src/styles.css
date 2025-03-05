@@ -8,10 +8,12 @@
     --color-gruv-light-bg4: #a89984;
     --color-gruv-light-fg: #3c3836;
     --color-gruv-light-green: #79740e;
+    --color-gruv-light-red: #9d0006;
     
     --color-gruv-dark-bg: #282828;
     --color-gruv-dark-bg1: #3c3836;
     --color-gruv-dark-bg4: #7c6f64;
     --color-gruv-dark-fg: #ebdbb2;
     --color-gruv-dark-green: #b8bb26;
+    --color-gruv-dark-red: #fb4934;
 }

@@ -1,13 +1,22 @@
 <ul>
-  <li class="p-1 flex" [ngClass]="classStatusNavs()">
-    <button type="button" class="flex p-2 bg-gruv-light-green dark:bg-gruv-dark-green text-gray-200 dark:text-gruv-dark-fg rounded cursor-pointer" (click)="onToggleMenu()">
+  <li class="p-1" [ngClass]="classStatusNavs()">
+    <button type="button" gruv-button (click)="onToggleIsDark()">
+      <span class="material-icons-outlined">
+        @if (isDark()) {
+          light_mode
+        } @else {
+          dark_mode
+        }
+      </span>
+    </button>
+    <button type="button" [ngClass]="isOpen() ? 'ml-2' : 'mb-2'" gruv-button (click)="onToggleMenu()">
       <span class="material-icons-outlined">menu</span>
     </button>
   </li>
 
   @for (nav of navs(); track $index) {
     <li class="p-1 flex justify-center">
-      <a [routerLink]="nav.path" class="flex items-center bg-gruv-light-green dark:bg-gruv-dark-green text-gray-200 dark:text-gruv-dark-fg rounded p-2" [ngClass]="classPath()">
+      <a [routerLink]="nav.path" class="flex items-center bg-gruv-light-green dark:bg-gruv-dark-green text-gray-200 dark:text-gruv-dark-fg rounded p-2 hover:opacity-90 focus:opacity-90" [ngClass]="classPath()">
         <span class="material-icons-outlined">{{ nav.icon }}</span>
         @if (isOpen()) {
           <span class="ml-2">{{ nav.label }}</span>
