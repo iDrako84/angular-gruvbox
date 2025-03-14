@@ -3,6 +3,10 @@ export enum RoleEnum {
     USER = 2,
 }
 
+export interface IUsers {
+    data: UserModel[]
+}
+
 export class UserModel {
     constructor(
         public firstName: string,

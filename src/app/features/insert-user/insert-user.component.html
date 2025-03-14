@@ -1,1 +1,39 @@
-<p>insert-user works!</p>
+<gruv-title>Insert User</gruv-title>
+<gruv-card>
+    <form class="w-full" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="grid gap-6 mb-6 md:grid-cols-2">
+            <gruv-input-field
+                idField="firstName"
+                formControlName="firstName"
+                labelField="First name"
+                placeholderField="First Name..."
+                messageErrorField="Error"
+                [inputErrorField]="errorForm['firstName']"></gruv-input-field>
+            <gruv-input-field
+                idField="lastName"
+                formControlName="lastName"
+                labelField="Last name"
+                placeholderField="Last Name..."
+                messageErrorField="Error"
+                [inputErrorField]="errorForm['lastName']"></gruv-input-field>
+            <gruv-input-field
+                idField="age"
+                formControlName="age"
+                labelField="Age"
+                placeholderField="Age..."
+                messageErrorField="Error"
+                [inputErrorField]="errorForm['age']"></gruv-input-field>
+            <gruv-select-field
+                idField="role"
+                formControlName="role"
+                labelField="Role"
+                messageErrorField="Error"
+                [inputErrorField]="errorForm['role']"
+                [optionsField]="optionsRole()">
+            </gruv-select-field>
+        </div>
+        <div class="flex justify-end">
+            <button type="submit" gruv-button>Send</button>
+        </div>
+    </form>
+</gruv-card>

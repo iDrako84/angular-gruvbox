@@ -1,6 +1,6 @@
 <ul>
   <li class="p-1" [ngClass]="classStatusNavs()">
-    <button type="button" gruv-button (click)="onToggleIsDark()">
+    <a type="button" gruv-button-icon (click)="onToggleIsDark()" class="p-2">
       <span class="material-icons-outlined">
         @if (isDark()) {
           light_mode
@@ -8,10 +8,10 @@
           dark_mode
         }
       </span>
-    </button>
-    <button type="button" [ngClass]="isOpen() ? 'ml-2' : 'mb-2'" gruv-button (click)="onToggleMenu()">
+    </a>
+    <a type="button" class="p-2" [ngClass]="isOpen() ? 'ml-2' : 'mb-2'" gruv-button-icon (click)="onToggleMenu()">
       <span class="material-icons-outlined">menu</span>
-    </button>
+    </a>
   </li>
 
   @for (nav of navs(); track $index) {

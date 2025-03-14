@@ -1,0 +1,14 @@
+<label [attr.for]="idField" class="block mb-2 text-sm font-medium">{{ labelField }}</label>
+<input 
+    [attr.type]="typeField" 
+    [attr.id]="idField" 
+    class="border-2 border-gruv-light-bg4 focus:border-gruv-light-fg dark:focus:border-gruv-dark-fg dark:text-gruv-dark-green focus:outline-none text-sm rounded block w-full p-2.5" 
+    [attr.placeholder]="placeholderField"
+    [readOnly]="readOnlyField"
+    [ngModel]="value"
+    (ngModelChange)="_onChange($event)"
+    [disabled]="isDisabled"
+     />
+@if (inputErrorField && messageErrorField) {
+    <p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ messageErrorField }}</p>
+}

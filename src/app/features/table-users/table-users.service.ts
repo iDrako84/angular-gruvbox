@@ -1,11 +1,10 @@
 import { Injectable, signal, WritableSignal } from '@angular/core';
-import { RoleEnum, UserModel } from './user.model';
+import { UserModel } from './user.model';
+import { HttpUsersService } from '../../core/calls/http-users.service';
 
 @Injectable({ providedIn: 'root' })
 export class TableUsersService {
-    private readonly users: WritableSignal<UserModel[]> = signal([
-        new UserModel('Max', 'A', 41, RoleEnum.ADMIN)
-    ]);
+    private readonly users: WritableSignal<UserModel[]> = signal([]);
     private readonly columns: WritableSignal<string[]> = signal([
         'Name',
         'Age',
@@ -13,7 +12,11 @@ export class TableUsersService {
         'Action'
     ]);
 
-    constructor() { }
+    constructor(private _httpUsersService: HttpUsersService) { 
+        this._httpUsersService.getUsers().subscribe({
+            next: (users: UserModel[]) => this.users.set(users)
+        });
+    }
 
     public getUsers(): WritableSignal<UserModel[]> {
         return this.users;

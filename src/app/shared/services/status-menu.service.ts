@@ -4,7 +4,7 @@ import { Injectable, signal, WritableSignal } from '@angular/core';
   providedIn: 'root'
 })
 export class StatusMenuService {
-  private readonly isOpen: WritableSignal<boolean> = signal(true);
+  private readonly isOpen: WritableSignal<boolean> = signal(false);
 
   constructor() { }
 

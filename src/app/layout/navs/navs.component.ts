@@ -5,14 +5,14 @@ import { NavsService } from './navs.service';
 import { NavModel } from './nav';
 import { RouterLink } from '@angular/router';
 import { ThemeService } from '../../shared/services/theme.service';
-import { GruvButtonDirective } from '../../shared/directives/button.directive';
+import { GruvButtonModule } from '../../shared/directives/gruv-button/gruv-button.module';
 
 @Component({
   selector: 'gruv-navs',
   imports: [
     NgClass,
     RouterLink,
-    GruvButtonDirective
+    GruvButtonModule
   ],
   templateUrl: './navs.component.html',
   styleUrl: './navs.component.scss'

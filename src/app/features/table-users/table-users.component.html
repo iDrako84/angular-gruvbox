@@ -1,6 +1,5 @@
-
-
-<div class="relative overflow-x-auto">
+<gruv-title>Table Users</gruv-title>
+<div class="relative overflow-x-auto mb-2">
     <table class="w-full text-sm text-left rtl:text-right">
         <thead class="text-xs uppercase bg-gruv-light-bg1 dark:bg-gruv-dark-bg1">
             <tr>
@@ -24,7 +23,7 @@
                         {{ user.role | role }}
                     </td>
                     <td class="px-6 py-4 flex justify-end">
-                        <button type="button" gruv-button color="danger" (click)="onRemoveUser($index)">
+                        <button type="button" gruv-button-icon color="danger" (click)="onRemoveUser($index)">
                             <span class="material-icons-outlined">delete</span>
                         </button>
                     </td>

@@ -5,7 +5,7 @@ import { DOCUMENT } from '@angular/common';
   providedIn: 'root'
 })
 export class ThemeService {
-  private readonly isDark: WritableSignal<boolean> = signal(true);
+  private readonly isDark: WritableSignal<boolean> = signal(false);
   private readonly renderer: Renderer2;
 
   constructor(

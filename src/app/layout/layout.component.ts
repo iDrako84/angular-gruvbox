@@ -19,6 +19,11 @@ export class LayoutComponent {
     if (isOpen) return 'min-w-[300px] max-w-[300px]';
     else return 'min-w-[50px] max-w-[50px]';
   });
+  public readonly classContent: Signal<string> = computed(() => {
+    const isOpen: boolean = this.isOpen();
+    if (isOpen) return 'w-[calc(100%-300px)] ml-[300px]';
+    else return 'w-[calc(100%-50px)] ml-[50px]';
+  });
 
   constructor(private _statusMenuService: StatusMenuService) {
     this.isOpen = this._statusMenuService.getIsOpen();
